@@ -10,8 +10,18 @@ echo "Performance Test Results" > "$LOG_FILE"
 echo "Test run on: $(date)" >> "$LOG_FILE"
 echo "=================================================================" >> "$LOG_FILE"
 
-TABLE_HEADER=$(printf "%-10s | %-12s | %-12s | %-12s | %-12s" "Workers" "Chunk Size" "Real Time" "User Time" "Sys Time")
+echo "Performing initial setup..."
+echo "Cleaning all data directories..."
+rm -rf data/input/* data/output/* logs/*
+
+echo "Creating the ${DUMMY_FILE_SIZE_GB}GB dummy data file. This may take a moment..."
+
+python main.py --workers 4 --chunk-size 10000 --file-size $DUMMY_FILE_SIZE_GB >/dev/null 2>/dev/null
+echo "Dummy data file created successfully."
 echo ""
+
+
+TABLE_HEADER=$(printf "%-10s | %-12s | %-12s | %-12s | %-12s" "Workers" "Chunk Size" "Real Time" "User Time" "Sys Time")
 echo "$TABLE_HEADER"
 echo "-----------------------------------------------------------------"
 
@@ -22,7 +32,7 @@ echo "-----------------------------------------------------------------" >> "$LO
 for workers in "${WORKER_COUNTS[@]}"; do
   for chunk_size in "${CHUNK_SIZES[@]}"; do
     
-    rm -rf data/input/* data/output/* logs/*
+    rm -rf data/output/* logs/*
 
     TIME_OUTPUT=$({ time python main.py --workers $workers --chunk-size $chunk_size --file-size $DUMMY_FILE_SIZE_GB >/dev/null 2>/dev/null; } 2>&1)
 

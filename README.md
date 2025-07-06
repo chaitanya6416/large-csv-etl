@@ -30,7 +30,7 @@ Clone the repository and navigate to the project directory.
 
 Create and activate a virtual environment (recommended):
 
-`python -m venv venv`
+`python -m venv venv` <br/>
 `source venv/bin/activate`
 
 Install dependencies:
@@ -53,6 +53,8 @@ Example: Run with 4 workers and a chunk size of 50,000
 `python main.py --workers 4 --chunk-size 50000`
 
 Use `python main.py --help` to see all available options.
+
+![alt text](image-1.png)
 
 Running the Tests
 To verify the integrity of the application, run the test suite using pytest.
