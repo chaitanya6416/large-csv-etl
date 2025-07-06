@@ -1,10 +1,15 @@
+# first party imports
 import os 
+import logging 
 
+# third party imports
 import config
+
+logger = logging.getLogger(__name__)
+
 
 def merge_temp_files(temp_file_paths):
     final_csv_path = config.FINAL_CSV_PATH
-    # os.makedirs(final_csv_path, exist_ok=True)
     try:
         with open(final_csv_path, 'w', newline='') as outfile:
             with open(temp_file_paths[0], 'r') as f:
@@ -19,10 +24,10 @@ def merge_temp_files(temp_file_paths):
                     for line in f:
                         outfile.write(line)
         
-        print(f"Successfully merged data to {final_csv_path}.")
+        logger.info(f"Successfully merged data to {final_csv_path}.")
 
     except Exception as e:
-        print(f"Failed to merge temporary files: {e}", exc_info=True)
+        logger.error(f"Failed to merge temporary files: {e}", exc_info=True)
         return ""
 
     finally:
@@ -31,11 +36,11 @@ def merge_temp_files(temp_file_paths):
             try:
                 os.remove(file)
             except OSError as e:
-                print(f"Error removing temporary file {file}: {e}")
+                logger.error(f"Error removing temporary file {file}: {e}")
         try:
             os.rmdir(config.TEMP_FILES_DIR)
-            print("Cleaned up temporary files.")
+            logger.info("Cleaned up temporary files.")
         except OSError as e:
-            print(f"Error removing temporary directory. msg: {e}")
+            logger.error(f"Error removing temporary directory. msg: {e}")
     
     return final_csv_path
