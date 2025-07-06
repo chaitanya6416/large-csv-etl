@@ -41,6 +41,7 @@ def main():
     create_dummy_data()
     temp_file_paths = run_etl_pipeline()
     merge_temp_files(temp_file_paths)
+    
 
 
 if __name__ == "__main__":
