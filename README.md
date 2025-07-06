@@ -2,9 +2,13 @@
 
 A pipeline designed to process large CSV files by reading data in chunks, transforming it in parallel, and loading the cleaned data into a SQLite database.
 
+## Design
+
+![alt text](image.png)
+
 ## Key Features
 
-- Out-of-Core Processing: Reads and processes large CSV files in manageable chunks without loading the entire file into memory.
+- Processes in chunks: Reads and processes large CSV files in manageable chunks without loading the entire file into memory.
 - Parallel Execution: Utilizes a ProcessPoolExecutor for parallel data transformation on multi-core systems.
 - Configuration-Driven: Transformation logic is defined in a central config.py file.
 - Command-Line Interface: Provides a CLI for overriding default configurations like file paths, chunk size, and worker count.
