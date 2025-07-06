@@ -4,23 +4,20 @@ A pipeline designed to process large CSV files by reading data in chunks, transf
 
 ## Key Features
 
-Out-of-Core Processing: Reads and processes large CSV files in manageable chunks without loading the entire file into memory.
-
-Parallel Execution: Utilizes a ProcessPoolExecutor for parallel data transformation on multi-core systems.
-
-Configuration-Driven: Transformation logic is defined in a central config.py file.
-
-Command-Line Interface: Provides a CLI for overriding default configurations like file paths, chunk size, and worker count.
+- Out-of-Core Processing: Reads and processes large CSV files in manageable chunks without loading the entire file into memory.
+- Parallel Execution: Utilizes a ProcessPoolExecutor for parallel data transformation on multi-core systems.
+- Configuration-Driven: Transformation logic is defined in a central config.py file.
+- Command-Line Interface: Provides a CLI for overriding default configurations like file paths, chunk size, and worker count.
 
 ## Project Structure
 
-large_csv_etl/
-├── data/ # For input, output, and temporary files
-├── etl/ # Core ETL modules (processing, db loading, etc.)
-├── logs/ # Application log files
-├── tests/ # Automated test suite
-├── config.py # Central configuration for the pipeline
-└── main.py # Main entry point for the application
+large_csv_etl/ <br/>
+├── data/ # For input, output, and temporary files <br/>
+├── etl/ # Core ETL modules (processing, db loading, etc.) <br/>
+├── logs/ # Application log files <br/>
+├── tests/ # Automated test suite <br/>
+├── config.py # Central configuration for the pipeline <br/>
+└── main.py # Main entry point for the application <br/>
 
 ## Setup and Installation
 
