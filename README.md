@@ -56,12 +56,20 @@ Use `python main.py --help` to see all available options.
 
 ![alt text](image-1.png)
 
-Running the Tests
+## Running the Tests <br/>
+
 To verify the integrity of the application, run the test suite using pytest.
 
-# Run all tests
-
 pytest
+
+## Performance testing
+
+The script `run_performance_test.sh` is created to check the running times of the entire etl process for different number of workers & different chunk sizes. <br/>
+
+The below screenshot depicts the performance results for a 1GB size of data file. <br/>
+![alt text](image-2.png)
+
+Check the .sh file for more details.
 
 ## Configuration
 
