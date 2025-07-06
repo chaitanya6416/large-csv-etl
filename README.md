@@ -12,12 +12,13 @@ A pipeline designed to process large CSV files by reading data in chunks, transf
 ## Project Structure
 
 large_csv_etl/ <br/>
-├── data/ # For input, output, and temporary files <br/>
-├── etl/ # Core ETL modules (processing, db loading, etc.) <br/>
-├── logs/ # Application log files <br/>
-├── tests/ # Automated test suite <br/>
-├── config.py # Central configuration for the pipeline <br/>
-└── main.py # Main entry point for the application <br/>
+
+- data/ # For input, output, and temporary files <br/>
+- etl/ # Core ETL modules (processing, db loading, etc.) <br/>
+- logs/ # Application log files <br/>
+- tests/ # Automated test suite <br/>
+- config.py # Central configuration for the pipeline <br/>
+- main.py # Main entry point for the application <br/>
 
 ## Setup and Installation
 
