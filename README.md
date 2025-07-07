@@ -4,7 +4,7 @@ A pipeline designed to process large CSV files by reading data in chunks, transf
 
 ## Design
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 ## Key Features
 
@@ -54,7 +54,7 @@ Example: Run with 4 workers and a chunk size of 50,000
 
 Use `python main.py --help` to see all available options.
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 ## Running the Tests <br/>
 
@@ -67,7 +67,7 @@ pytest
 The script `run_performance_test.sh` is created to check the running times of the entire etl process for different number of workers & different chunk sizes. <br/>
 
 The below screenshot depicts the performance results for a 1GB size of data file. <br/>
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 Check the .sh file for more details.
 
